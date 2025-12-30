@@ -1,0 +1,252 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-dev-vb-project"
+		},
+		"AZURE_SQL_INCRE_password": {
+			"value": ""
+		},
+		"LS_AZURE_password": {
+			"value": ""
+		},
+		"LS_AZURE_COPY_password": {
+			"value": ""
+		},
+		"LS_AZURE_PL3_password": {
+			"value": ""
+		},
+		"LS_AZURE_WATERMARK_password": {
+			"value": ""
+		},
+		"LS_AZURE_WATERMARK_NEW_password": {
+			"value": ""
+		},
+		"LS_BLOB_INC_connectionString": {
+			"value": ""
+		},
+		"LS_BLOB_INCE_connectionString": {
+			"value": ""
+		},
+		"LS_BLOB_JSON_connectionString": {
+			"value": ""
+		},
+		"LS_BLOB_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_PQ_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_PQ_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_PQ_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_LKUP_EXCEL_password": {
+			"value": ""
+		},
+		"LS_PQ_SRC_connectionString": {
+			"value": ""
+		},
+		"LS_REST_API_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_PQ_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_PQ_password": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_JOB_password": {
+			"value": ""
+		},
+		"LS_SQL_PL4_password": {
+			"value": ""
+		},
+		"LS_SQL_PQ_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_PQ_1_password": {
+			"value": ""
+		},
+		"LS_SQL_PQ_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_blob_storage_connectionString": {
+			"value": ""
+		},
+		"AZURE_SQL_INCRE_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"AZURE_SQL_INCRE_properties_typeProperties_database": {
+			"value": "db_azure_incremental_load"
+		},
+		"AZURE_SQL_INCRE_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_AZURE_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_properties_typeProperties_database": {
+			"value": "db_vb_project"
+		},
+		"LS_AZURE_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_AZURE_COPY_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_COPY_properties_typeProperties_database": {
+			"value": "db_azure_incremental_load"
+		},
+		"LS_AZURE_COPY_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_AZURE_PL3_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_PL3_properties_typeProperties_database": {
+			"value": "db_vb_project"
+		},
+		"LS_AZURE_PL3_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_AZURE_WATERMARK_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_WATERMARK_properties_typeProperties_database": {
+			"value": "db_azure_incremental_load"
+		},
+		"LS_AZURE_WATERMARK_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_AZURE_WATERMARK_NEW_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_WATERMARK_NEW_properties_typeProperties_database": {
+			"value": "db_azure_incremental_load"
+		},
+		"LS_AZURE_WATERMARK_NEW_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_BLOB_COPY_sasUri": {
+			"value": ""
+		},
+		"LS_BLOB_SRC_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_BULK_PQ_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_BULK_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_CSV_PQ_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_CSV_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_JSON_PQ_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_JSON_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_LKUP_EXCEL_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_LKUP_EXCEL_properties_typeProperties_database": {
+			"value": "db_vb_project"
+		},
+		"LS_LKUP_EXCEL_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_REST_API_PQ_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/xfeaIz/data"
+		},
+		"LS_REST_API_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_PQ_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_PQ_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_SNOWFLAKE_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_SNOW_PQ_SINK_sasUri": {
+			"value": ""
+		},
+		"LS_SQL_JOB_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_SQL_JOB_properties_typeProperties_database": {
+			"value": "db_vb_project"
+		},
+		"LS_SQL_JOB_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_SQL_PL4_properties_typeProperties_server": {
+			"value": "sqlservervbproject.database.windows.net"
+		},
+		"LS_SQL_PL4_properties_typeProperties_database": {
+			"value": "db_vb_project"
+		},
+		"LS_SQL_PL4_properties_typeProperties_userName": {
+			"value": "srv-vb-project"
+		},
+		"LS_SQL_PQ_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_SQL_PQ_1_properties_typeProperties_server": {
+			"value": "IBM-PF365QSA\\SWAPNAL"
+		},
+		"LS_SQL_PQ_1_properties_typeProperties_database": {
+			"value": "vision_board"
+		},
+		"LS_SQL_PQ_1_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQL_PQ_SINK_properties_typeProperties_url": {
+			"value": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"EVENT_TGR_properties_typeProperties_scope": {
+			"value": "/subscriptions/bf345919-89c1-49f5-b4a5-31fdc644b4ef/resourceGroups/rg_dev_vb_project/providers/Microsoft.Storage/storageAccounts/sablobvbprojectstorage"
+		},
+		"NEW_EVT_TRIGGER_properties_typeProperties_scope": {
+			"value": "/subscriptions/bf345919-89c1-49f5-b4a5-31fdc644b4ef/resourceGroups/rg_dev_vb_project/providers/Microsoft.Storage/storageAccounts/sablobvbprojectstorage"
+		},
+		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
+			"value": "Tr_sample_csv"
+		}
+	}
+}

@@ -1,0 +1,567 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-dev-vb-project"
+		},
+		"AZURE_SQL_INCRE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AZURE_SQL_INCRE'"
+		},
+		"LS_AZURE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURE'"
+		},
+		"LS_AZURE_COPY_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURE_COPY'"
+		},
+		"LS_AZURE_PL3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURE_PL3'"
+		},
+		"LS_AZURE_WATERMARK_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURE_WATERMARK'"
+		},
+		"LS_AZURE_WATERMARK_NEW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURE_WATERMARK_NEW'"
+		},
+		"LS_BLOB_INC_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_INC'"
+		},
+		"LS_BLOB_INCE_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_INCE'"
+		},
+		"LS_BLOB_JSON_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_JSON'"
+		},
+		"LS_BLOB_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BLOB_SRC'"
+		},
+		"LS_BULK_PQ_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_PQ'"
+		},
+		"LS_BULK_PQ_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_PQ_SINK'"
+		},
+		"LS_CSV_PQ_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PQ'"
+		},
+		"LS_CSV_PQ_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PQ_SINK'"
+		},
+		"LS_EXCEL_PQ_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PQ_SINK'"
+		},
+		"LS_JSON_PQ_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_PQ'"
+		},
+		"LS_JSON_PQ_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_PQ_SINK'"
+		},
+		"LS_LKUP_EXCEL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_LKUP_EXCEL'"
+		},
+		"LS_PQ_SRC_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_PQ_SRC'"
+		},
+		"AZURE_SQL_INCRE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlservervbproject.database.windows.net"
+		},
+		"AZURE_SQL_INCRE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_azure_incremental_load"
+		},
+		"AZURE_SQL_INCRE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "srv-vb-project"
+		},
+		"LS_AZURE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_vb_project"
+		},
+		"LS_AZURE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "srv-vb-project"
+		},
+		"LS_AZURE_COPY_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_COPY_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_azure_incremental_load"
+		},
+		"LS_AZURE_COPY_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "srv-vb-project"
+		},
+		"LS_AZURE_PL3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_PL3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_vb_project"
+		},
+		"LS_AZURE_PL3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "srv-vb-project"
+		},
+		"LS_AZURE_WATERMARK_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_WATERMARK_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_azure_incremental_load"
+		},
+		"LS_AZURE_WATERMARK_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "srv-vb-project"
+		},
+		"LS_AZURE_WATERMARK_NEW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlservervbproject.database.windows.net"
+		},
+		"LS_AZURE_WATERMARK_NEW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_azure_incremental_load"
+		},
+		"LS_AZURE_WATERMARK_NEW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "srv-vb-project"
+		},
+		"LS_BLOB_COPY_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'LS_BLOB_COPY'"
+		},
+		"LS_BLOB_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_BULK_PQ_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_BULK_PQ_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_CSV_PQ_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_CSV_PQ_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PQ_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_JSON_PQ_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectraw01.dfs.core.windows.net/"
+		},
+		"LS_JSON_PQ_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sadevvbprojectsource01.dfs.core.windows.net/"
+		},
+		"LS_LKUP_EXCEL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlservervbproject.database.windows.net"
+		},
+		"LS_LKUP_EXCEL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db_vb_project"
+		},
+		"LS_LKUP_EXCEL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "srv-vb-project"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AZURE_SQL_INCRE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('AZURE_SQL_INCRE_properties_typeProperties_server')]",
+					"database": "[parameters('AZURE_SQL_INCRE_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": true,
+					"authenticationType": "SQL",
+					"userName": "[parameters('AZURE_SQL_INCRE_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('AZURE_SQL_INCRE_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURE_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURE_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": true,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURE_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURE_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURE_COPY')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURE_COPY_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURE_COPY_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": true,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURE_COPY_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURE_COPY_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURE_PL3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURE_PL3_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURE_PL3_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURE_PL3_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURE_PL3_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURE_WATERMARK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURE_WATERMARK_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURE_WATERMARK_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": true,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURE_WATERMARK_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURE_WATERMARK_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURE_WATERMARK_NEW')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURE_WATERMARK_NEW_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURE_WATERMARK_NEW_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": true,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURE_WATERMARK_NEW_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURE_WATERMARK_NEW_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BLOB_COPY')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"sasUri": "[parameters('LS_BLOB_COPY_sasUri')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BLOB_INC')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_BLOB_INC_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BLOB_INCE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_BLOB_INCE_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BLOB_JSON')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_BLOB_JSON_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BLOB_SRC')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_BLOB_SRC_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_BLOB_SRC_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BULK_PQ')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_BULK_PQ_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_BULK_PQ_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BULK_PQ_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_BULK_PQ_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_BULK_PQ_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_CSV_PQ')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_CSV_PQ_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_CSV_PQ_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_CSV_PQ_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_CSV_PQ_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_CSV_PQ_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_EXCEL_PQ_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_EXCEL_PQ_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_EXCEL_PQ_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_JSON_PQ')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_JSON_PQ_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_JSON_PQ_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_JSON_PQ_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_JSON_PQ_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_JSON_PQ_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_LKUP_EXCEL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_LKUP_EXCEL_properties_typeProperties_server')]",
+					"database": "[parameters('LS_LKUP_EXCEL_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": true,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_LKUP_EXCEL_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_LKUP_EXCEL_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_PQ_SRC')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_PQ_SRC_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
