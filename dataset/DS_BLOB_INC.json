@@ -1,0 +1,27 @@
+{
+	"name": "DS_BLOB_INC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB_INC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@concat('Incremental-', pipeline().RunId, '.txt')",
+					"type": "Expression"
+				},
+				"container": "adftutorial"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,24 @@
+{
+	"name": "DS_BLOB_COPY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@concat('Incremental-', pipeline().RunId, '.txt')",
+					"type": "Expression"
+				},
+				"container": "adftutorial"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

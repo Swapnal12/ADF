@@ -1,0 +1,13 @@
+{
+	"name": "DS_AZURE_COPY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZURE_COPY",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

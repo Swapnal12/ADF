@@ -1,0 +1,17 @@
+{
+	"name": "DS_SQL_PQ",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_PQ_1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "olist_orders_dataset"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "EVENT_TGR",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/snowflake/2025/12",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/bf345919-89c1-49f5-b4a5-31fdc644b4ef/resourceGroups/rg_dev_vb_project/providers/Microsoft.Storage/storageAccounts/sablobvbprojectstorage",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
