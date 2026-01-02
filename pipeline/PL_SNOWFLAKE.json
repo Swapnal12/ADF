@@ -34,13 +34,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_SNOWFLAKE_PQ",
+						"referenceName": "DS_SNOWFLAKE_PQ_26",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_snow_pq_sink",
+						"referenceName": "DS_SNOW_PQ_SINK_26",
 						"type": "DatasetReference"
 					}
 				]

@@ -1,0 +1,20 @@
+{
+	"name": "DS_SNOW_PQ_SINK_26",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SNOW_PQ_SINK_26",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "@concat(     'snowflake/',     formatDateTime(utcNow(),'yyyy'),'/',     formatDateTime(utcNow(),'MM'),'/',     formatDateTime(utcNow(),'dd') )",
+				"container": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
