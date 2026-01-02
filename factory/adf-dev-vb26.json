@@ -1,0 +1,9 @@
+{
+	"name": "adf-dev-vb26",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9827e0fa-53aa-420c-913b-092c7eda968d",
+		"tenantId": "f6fe9833-d809-4c6c-930b-b82ba3b84715"
+	}
+}
