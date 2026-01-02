@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"blobPathBeginsWith": "/input/blobs/",
 			"ignoreEmptyBlobs": true,
-			"scope": "/subscriptions/bf345919-89c1-49f5-b4a5-31fdc644b4ef/resourceGroups/rg_dev_vb_project/providers/Microsoft.Storage/storageAccounts/sablobvbprojectstorage",
+			"scope": "/subscriptions/f83cc9bf-0246-44c8-b5bc-9ea09954d3f9/resourceGroups/rg_dev_vb/providers/Microsoft.Storage/storageAccounts/sablobdevvb",
 			"events": [
 				"Microsoft.Storage.BlobCreated"
 			]
